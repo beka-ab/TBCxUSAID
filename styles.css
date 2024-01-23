@@ -3,6 +3,275 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+:root {
+  --bgcolor: RGB(43, 43, 43);
+  --headbg: RGB(26, 30, 31);
+  --coursescolor: RGB(22, 22, 22);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--headbg);
+  padding: 20px;
   background-color: black;
+  width: 100%;
+}
+.hamburger {
+  width: 26px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  transition: all 0.33s ease-out;
+}
+.hamburger-half {
+  width: 50%;
+  background-color: aliceblue;
+  height: 3px;
+  transition: transform 0.33s ease-out;
+  border-radius: 20px;
+}
+.hamburger-full {
+  width: 100%;
+  background-color: aliceblue;
+  height: 3px;
+  transition: transform 0.33s ease-out;
+  border-radius: 20px;
+}
+.left {
+  align-self: flex-end;
+}
+.rotate {
+  transform: rotate(-45deg);
+  transition: transform 0.33s ease-out;
+}
+.rotatearrow {
+  transform: rotate(180deg);
+  transition: transform 0.33s ease-in-out;
+}
+.rotate-top {
+  transform: translate(2px, 3px) rotate(-135deg);
+  transition: transform 0.33s ease-out;
+}
+.rotate-bottom {
+  transform: translate(-2px, -3px) rotate(-135deg);
+  transition: transform 0.33s ease-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bgcolor);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.33s ease-out;
+}
+
+li {
+  color: white;
+  list-style: none;
+}
+.burger-menu {
+  right: -100%;
+  position: fixed;
+  top: 76px;
+  height: 100vh;
+  width: 70%;
+  background-color: var(--bgcolor);
+  transform: translateX(100%);
+  transition: all 0.33s ease-in-out;
+  overflow-y: auto;
+}
+.active {
+  transform: translateX(0);
+  right: 0;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+.headline-section {
+  background-image: url(./assets/93e8a3_9fa23196ddf6427a9da574e2b31a13d2~mv2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-headline {
+  color: rgb(244, 244, 244);
+}
+.project-about {
+  background-color: var(--bgcolor);
+  padding: 32px 20px;
+}
+.project-about-content {
+  color: white;
+  line-height: 1.6em;
+}
+.courses-list {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  background-color: var(--coursescolor);
+}
+.courses-headline {
+  color: rgba(244, 244, 244, 1);
+  align-self: flex-start;
+}
+.course-headline {
+  color: #f4f4f4;
+  margin-top: 25px;
+}
+.registration {
+  color: rgb(244, 244, 244);
+  margin: 20px 0px;
+}
+.details {
+  color: #00aeef;
+}
+.course {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid solid solid solid;
+  border-color: rgba(85, 85, 85, 1) rgba(85, 85, 85, 1) rgba(85, 85, 85, 1)
+    rgba(85, 85, 85, 1);
+  border-radius: 6px 6px 6px 6px;
+  margin-top: 20px;
+}
+
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  padding: 20px 0px;
+  border: none;
+}
+.slide-container .slides {
+  width: 100%;
+  height: calc(100% - 40px);
+  position: relative;
+  overflow: hidden;
+}
+.slide-container .slides div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+.slidediv img {
+  height: 100px;
+  max-width: 90%;
+}
+.slide-container .slides div:not(.active) {
+  top: 0;
+  left: -100%;
+}
+span.next,
+span.prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 14px;
+  color: #eee;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.5s;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+}
+span.next {
+  right: 20px;
+}
+span.prev {
+  left: 20px;
+}
+span.next:hover,
+span.prev:hover {
+  background-color: #ede6d6;
+  opacity: 0.8;
+  color: #222;
+}
+.dotsContainer {
+  position: absolute;
+  bottom: 5px;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dotsContainer .dot {
+  width: 15px;
+  height: 15px;
+  margin: 0px 2px;
+  border: 3px solid #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+.dotsContainer .active {
+  background-color: #555;
+}
+.partners {
+  background-color: var(--bgcolor);
+}
+.slidediv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.next,
+.prev {
+  display: none;
+}
+@keyframes next1 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes next2 {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes prev1 {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes prev2 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.faq-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closed {
+  display: none;
 }
