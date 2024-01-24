@@ -7,10 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
+    <header class="main-header">
       <img src="./assets/logo.svg" alt="" />
 
-      <div class="hamburger">
+      <div class="menu-icon">
         <div class="hamburger-half"></div>
         <div class="hamburger-full"></div>
         <div class="hamburger-half left"></div>
@@ -30,12 +30,19 @@
           <li>რისკები</li>
         </ul>
       </div>
+      <nav class="navbar">
+        <ul class="nav-lists">
+          <li>მთავარი</li>
+          <li>TBC IT</li>
+          <li>TBC x USAID</li>
+          <li>რისკები</li>
+        </ul>
+      </nav>
     </header>
     <section class="headline-section">
       <h1 class="intro-headline">
         TBC x USAID <br />
-        ტექნოლოგიური<br />
-        განათლებისთვის
+        ტექნოლოგიური განათლებისთვის
       </h1>
     </section>
     <div class="project-about">
@@ -48,119 +55,12 @@
       </p>
       <button class="more-btn">გაიგე მეტი</button>
     </div>
-    <section class="courses-list">
+    <section class="courses-container">
       <h1 class="courses-headline">სასწავლო კურსები</h1>
-      <div class="course">
-        <img class="course-img" src="./assets/iosImg.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">iOS Development</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/reactImg.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">React</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/pythonImg.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">Intro to Python</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/phthonAdvnc.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">Advanced Python</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/cyberscr.jpg" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">Advanced Cybersecurity Course</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/tot.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">ToT - Training of Trainers</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/blockch.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">Blockchain</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/devops.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">DevOps</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
-      <div class="course">
-        <img class="course-img" src="./assets/infSecurity.webp" alt="" />
-        <div class="course-txt">
-          <h5 class="course-headline">Information Security Governance</h5>
-          <p class="registration">რეგისტრაცია დასრულებულია</p>
-          <div>
-            <img src="./assets/arrow.svg" alt="" />
-
-            <span class="details">კურსის დეტალები</span>
-          </div>
-        </div>
-      </div>
+      <div class="courses-list" id="coursesList"></div>
     </section>
     <section class="partners">
-      <h1>პროექტის პარტნიორები</h1>
+      <h1 class="partners-headline">პროექტის პარტნიორები</h1>
       <div class="slide-container">
         <div class="slides">
           <div class="slidediv active">
@@ -182,7 +82,7 @@
           <span class="prev">&#10094;</span>
         </div>
 
-        <div class="dotsContainer">
+        <div class="dots-container">
           <div class="dot active" attr="0" onclick="switchImage(this)"></div>
           <div class="dot" attr="1" onclick="switchImage(this)"></div>
           <div class="dot" attr="2" onclick="switchImage(this)"></div>
@@ -190,10 +90,10 @@
       </div>
     </section>
     <section class="faq">
-      <h1>ხშირად დასმული კითხვები</h1>
-      <div class="faq-container">
+      <h1 class="faq-headline">ხშირად დასმული კითხვები</h1>
+      <div class="faq-container" id="faq-container">
         <div class="faq-content">
-          <div class="faq-quest">
+          <div class="faq-question">
             <p>როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა</p>
             <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
           </div>
@@ -241,14 +141,14 @@
           </div>
         </div>
         <div class="faq-content">
-          <div class="faq-quest">
+          <div class="faq-question">
             <p>შეიძლება თუ არა ერთზე მეტ კურსზე რეგისტრაცია?</p>
             <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
           </div>
           <p class="faq-answer closed">i am text inside quest</p>
         </div>
         <div class="faq-content">
-          <div class="faq-quest">
+          <div class="faq-question">
             <p>რა ღირს სწავლა პროგრამის ფარგლებში ?</p>
             <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
           </div>
@@ -260,10 +160,10 @@
       </div>
     </section>
     <footer>
-      <div class="ft-logo">
+      <div class="footer-logo">
         <img src="./assets/Asset 1@2x.webp" alt="" />
       </div>
-      <div class="ft-logos">
+      <div class="footer-logos">
         <button class="footer-btn">მოგვწერეთ</button>
         <div>
           <img src="./assets/fblogo.webp" alt="" />
@@ -275,6 +175,7 @@
         <p>© 2023 ყველა უფლება დაცულია</p>
       </div>
     </footer>
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./data.js"></script>
   </body>
 </html>
