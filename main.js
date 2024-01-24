@@ -5,9 +5,9 @@ const burgerBottomLine = document.querySelector(".left");
 const burgerMenuList = document.querySelector(".burger-menu");
 const body = document.querySelector("body");
 const overlay = document.querySelector(".overlay");
-const faq = document.querySelectorAll(".faq-content");
-const faqArrow = document.querySelector(".faq-arrow");
-const faqAnswer = document.querySelector(".faq-answer");
+const faq = document.querySelectorAll(".faq-quest");
+const faqArrow = document.querySelectorAll(".faq-arrow");
+const faqAnswer = document.querySelectorAll(".faq-answer");
 
 burgerMenu.addEventListener("click", () => {
   burgerMiddleLine.classList.toggle("rotate");
@@ -88,9 +88,13 @@ function switchImage(currentImage) {
   }
   indicators();
 }
-faq.forEach((e) => {
-  e.addEventListener("click", () => {
-    faqArrow.classList.toggle("rotatearrow");
-    faqAnswer.classList.toggle("closed");
+for (let i = 0; i < faq.length; i++) {
+  faq[i].addEventListener("click", () => {
+    for (let j = 0; j < faqAnswer.length; j++) {
+      if (j == i) {
+        faqAnswer[j].classList.toggle("closed");
+        faqArrow[j].classList.toggle("rotatearrow");
+      }
+    }
   });
-});
+}

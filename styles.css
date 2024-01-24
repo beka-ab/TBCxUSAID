@@ -15,7 +15,7 @@ header {
   justify-content: space-between;
   background-color: var(--headbg);
   padding: 20px;
-  background-color: black;
+
   width: 100%;
 }
 .hamburger {
@@ -99,28 +99,37 @@ li {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50px 0px;
+  padding: 50px 0px 50px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .intro-headline {
   color: rgb(244, 244, 244);
+  line-height: 1.6em;
+  font-size: 24px;
+  font-weight: bold;
 }
 .project-about {
   background-color: var(--bgcolor);
   padding: 32px 20px;
 }
 .project-about-content {
-  color: white;
+  color: #f4f4f4;
   line-height: 1.6em;
+}
+.more-btn {
+  border: none;
+  background-color: var(--bgcolor);
+  color: #00aeef;
+  font-weight: bold;
+  margin-top: 30px;
 }
 .courses-list {
   display: flex;
   flex-direction: column;
-
+  background-color: rgb(34, 34, 34);
   padding: 20px;
-  background-color: var(--coursescolor);
 }
 .courses-headline {
   color: rgba(244, 244, 244, 1);
@@ -129,6 +138,12 @@ li {
 .course-headline {
   color: #f4f4f4;
   margin-top: 25px;
+}
+.course-img {
+  width: 100%;
+}
+.course-txt {
+  padding-left: 15px;
 }
 .registration {
   color: rgb(244, 244, 244);
@@ -144,6 +159,7 @@ li {
     rgba(85, 85, 85, 1);
   border-radius: 6px 6px 6px 6px;
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .slide-container {
@@ -267,11 +283,49 @@ span.prev:hover {
     left: 0%;
   }
 }
-.faq-content {
+.faq {
+  background-color: var(--coursescolor);
+  padding: 40px 20px;
+}
+.faq-quest {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--coursescolor);
+  border-bottom: 1px solid rgb(53, 49, 49);
+  padding: 20px 0px;
 }
 .closed {
   display: none;
+}
+.faq-btn {
+  border: none;
+  background-color: var(--coursescolor);
+}
+.faq-btn-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 10px;
+  padding: 30px 20px 20px 20px;
+  background-color: var(--bgcolor);
+}
+.indented-text {
+  padding-left: 15px;
+}
+.footer-btn {
+  border: none;
+  background-color: var(--bgcolor);
+}
+.ft-logos {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
