@@ -1,4 +1,4 @@
-import coursesData from "./data.js";
+import { coursesData, faqData } from "./data.js";
 
 const burgerMenu = document.querySelector(".menu-icon");
 const burgerTopLine = document.querySelector(".hamburger-half");
@@ -7,11 +7,31 @@ const burgerBottomLine = document.querySelector(".left");
 const burgerMenuList = document.querySelector(".burger-menu");
 const body = document.querySelector("body");
 const overlay = document.querySelector(".overlay");
+const header = document.querySelector(".main-header");
+
+/////
+
+const faqContainer = document.querySelector(".faq-container");
+faqData.forEach((data) => {
+  const faqHTML = ` <div class="faq-content">
+                      <div class="faq-question">
+                          <p>${data.question}</p>
+                          <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
+                      </div>
+                      <div class="faq-answer closed">
+                          <p>${data.answer}</p>
+                      </div>
+                    </div>`;
+  const container = document.createElement("div");
+  container.innerHTML = faqHTML;
+  faqContainer.appendChild(container);
+});
+
 const faq = document.querySelectorAll(".faq-question");
 const faqArrow = document.querySelectorAll(".faq-arrow");
 const faqAnswer = document.querySelectorAll(".faq-answer");
-const header = document.querySelector(".main-header");
 
+/////
 burgerMenu.addEventListener("click", () => {
   burgerMiddleLine.classList.toggle("rotate");
   burgerTopLine.classList.toggle("rotate-top");
@@ -21,9 +41,17 @@ burgerMenu.addEventListener("click", () => {
   body.classList.toggle("no-scroll");
   overlay.style.opacity = overlay.style.opacity === "0.5" ? "0" : "0.5";
 });
-
+let lastScrollTop = 0;
 window.addEventListener("scroll", () => {
   header.classList.toggle("movingheader", scrollY > 1);
+  const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+  if (currentScrollTop < lastScrollTop) {
+    header.classList.add("movingmobileheader");
+  } else {
+    header.classList.remove("movingmobileheader");
+  }
+  lastScrollTop = currentScrollTop;
+  currentScrollTop == 0 && header.classList.remove("movingmobileheader");
 });
 
 let slideImages = document.querySelectorAll(".slidediv");
@@ -107,7 +135,11 @@ function switchImage(currentImage) {
   }
   indicators();
 }
-
+dots.forEach((e) => {
+  e.addEventListener("click", (event) => {
+    switchImage(event.currentTarget);
+  });
+});
 faq.forEach((faqItem, i) => {
   faqItem.addEventListener("click", () => {
     faqAnswer[i].classList.toggle("closed");

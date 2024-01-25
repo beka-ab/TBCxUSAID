@@ -17,25 +17,22 @@
       </div>
       <div class="overlay"></div>
       <div class="burger-menu">
-        <ul>
+        <ul class="burger-lists">
           <li>მთავარი</li>
-        </ul>
-        <ul>
+
           <li>TBC IT</li>
-        </ul>
-        <ul>
-          <li>TBC x USAID</li>
-        </ul>
-        <ul>
+
+          <li class="choosed">TBC x USAID</li>
+
           <li>რისკები</li>
         </ul>
       </div>
       <nav class="navbar">
         <ul class="nav-lists">
-          <li>მთავარი</li>
-          <li>TBC IT</li>
-          <li>TBC x USAID</li>
-          <li>რისკები</li>
+          <a href="#"><li>მთავარი</li></a>
+          <a href="#"><li>TBC IT</li></a>
+          <a href="#"><li class="choosed">TBC x USAID</li></a>
+          <a href="#"><li>რისკები</li></a>
         </ul>
       </nav>
     </header>
@@ -83,96 +80,37 @@
         </div>
 
         <div class="dots-container">
-          <div class="dot active" attr="0" onclick="switchImage(this)"></div>
-          <div class="dot" attr="1" onclick="switchImage(this)"></div>
-          <div class="dot" attr="2" onclick="switchImage(this)"></div>
+          <div class="dot active" attr="0"></div>
+          <div class="dot" attr="1"></div>
+          <div class="dot" attr="2"></div>
         </div>
       </div>
     </section>
     <section class="faq">
       <h1 class="faq-headline">ხშირად დასმული კითხვები</h1>
-      <div class="faq-container" id="faq-container">
-        <div class="faq-content">
-          <div class="faq-question">
-            <p>როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა</p>
-            <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
-          </div>
-          <div class="faq-answer closed">
-            <p>
-              კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:
-              <br />
-              <br />
-              <br />
-            </p>
-
-            <div class="indented-text">
-              I ეტაპი - პირველ ეტაპზე საჭიროა, შეავსო სასურველი კურსისთვის
-              განკუთვნილი სარეგისტრაციო ფორმა, რომელიც განთავსებულია კურსის შიდა
-              გვერდზე. კურსზე რეგისტრაციის დასრულების შემდეგ დაიწყება შემოსული
-              განცხადებების გადარჩევა.
-              <br />
-              <br />
-              II ეტაპი - შერჩევის მეორე ეტაპი კურსების მიხედვით განსხვავებულია,
-              ზოგიერთი კურსისთვის მოიცავს პრე-ტესტს, ზოგიერთ კურსზე კი უნარების
-              ტესტს, სადაც მინიმალური ზღვარის გადალახვის შემთხვევაში გადახვალ
-              შერჩევის შემდეგ ეტაპზე.
-              <br />
-              <br />
-              III ეტაპი -მესამე ეტაპი კურსების მიხედვით განსხვავდება: Advance
-              კურსებზე, სადაც მოითხოვება გარკვეული ტექნიკური ცოდნა, მონაწილეებმა
-              უნდა დაწერონ ტექნიკური ტესტი ცოდნის დონის შესამოწმებლად, ხოლო
-              კურსებზე, სადაც რაიმე ტიპის წინასწარი ცოდნა მოთხოვნილი არ არის
-              უნდა შეასრულოთ ტექნიკური დავალება, რაც თქვენი კვლევისა და
-              თვითსწავლის უნარს ამოწმებს.
-              <br />
-              <br />
-              IV ეტაპი - შერჩევის ბოლო მეოთხე ეტაპი მოიცავს გასაუბრებას შესარჩევ
-              კომისიასთან. გასაუბრების წარმატებით გავლის შემთხვევაში ჩაირიცხებით
-              კურსზე და გაფორმდება შესაბამისი ხელშეკრულება.
-            </div>
-            <br />
-            <br />
-
-            <p>
-              * სანამ კურსზე დარეგისტრირდები მნიშვნელოვანია, ყურადღებით წაიკითხო
-              კურსის აღწერა, ნახო რას ისწავლი კურსის განმავლობაში და გაიგო
-              გააჩნია თუ არა კურსს დასწრების წინაპირობა.
-            </p>
-          </div>
-        </div>
-        <div class="faq-content">
-          <div class="faq-question">
-            <p>შეიძლება თუ არა ერთზე მეტ კურსზე რეგისტრაცია?</p>
-            <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
-          </div>
-          <p class="faq-answer closed">i am text inside quest</p>
-        </div>
-        <div class="faq-content">
-          <div class="faq-question">
-            <p>რა ღირს სწავლა პროგრამის ფარგლებში ?</p>
-            <img class="faq-arrow" src="./assets/faqarrow.svg" alt="" />
-          </div>
-          <p class="faq-answer closed">i am text inside quest</p>
-        </div>
-      </div>
+      <div class="faq-container" id="faq-container"></div>
       <div class="faq-btn-cont">
         <button class="faq-btn">ყველა კითხვა</button>
       </div>
     </section>
-    <footer>
+    <footer class="footer">
       <div class="footer-logo">
-        <img src="./assets/Asset 1@2x.webp" alt="" />
+        <img
+          class="footer-company-logo"
+          src="./assets/Asset 1@2x.webp"
+          alt=""
+        />
       </div>
       <div class="footer-logos">
         <button class="footer-btn">მოგვწერეთ</button>
-        <div>
-          <img src="./assets/fblogo.webp" alt="" />
-          <img src="./assets/youtubelogo.webp" alt="" />
+        <div class="social-logos">
+          <img class="fb-logo" src="./assets/fblogo.webp" alt="" />
+          <img class="yt-logo" src="./assets/youtubelogo.webp" alt="" />
         </div>
       </div>
-      <div>
-        <p>წესები და პირობები</p>
-        <p>© 2023 ყველა უფლება დაცულია</p>
+      <div class="footer-bottom">
+        <p class="footer-agreenmant">წესები და პირობები</p>
+        <p class="footer-copyright">© 2023 ყველა უფლება დაცულია</p>
       </div>
     </footer>
     <script type="module" src="./main.js"></script>
