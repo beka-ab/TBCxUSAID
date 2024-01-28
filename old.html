@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="main-header">
-      <img src="./assets/logos/logo.svg" alt="" />
+      <img src="./assets/logo.svg" alt="" />
 
       <div class="menu-icon">
         <div class="hamburger-half"></div>
@@ -53,86 +53,36 @@
       <button class="more-btn">გაიგე მეტი</button>
     </div>
     <section class="courses-container">
-      <div class="wrapper-courses">
-        <h2 class="courses-headline">სასწავლო კურსები</h2>
-        <div class="courses-list" id="coursesList"></div>
-      </div>
+      <h2 class="courses-headline">სასწავლო კურსები</h2>
+      <div class="courses-list" id="coursesList"></div>
     </section>
-    <section class="slider">
-      <div class="wrapper-slides">
-        <h1 class="slider__heading">პროექტის პარტნიორები</h1>
-      </div>
-      <div class="slides-overlay">
-        <div class="wrapper-slides">
-          <div class="slides" id="slidesContainer">
-            <div class="slide slide--fade-in">
-              <img
-                class="usaid"
-                src="./assets/partners-img/usaid.webp"
-                alt="USAID"
-              />
-              <img
-                class="space"
-                src="./assets/partners-img/space.webp"
-                alt="Space Int."
-              />
-              <img
-                class="tnet"
-                src="./assets/partners-img/tnet.webp"
-                alt="TNET"
-              />
-            </div>
-            <div class="slide">
-              <img
-                class="tegeta"
-                src="./assets/partners-img/tegeta.webp"
-                alt="tegeta"
-              />
-              <img
-                class="spectre"
-                src="./assets/partners-img/spec.png"
-                alt="Spectre"
-              />
-              <img
-                class="tbcleasing"
-                src="./assets/partners-img/tbclising.webp"
-                alt="TBC Leasing"
-              />
-            </div>
-            <div class="slide slide--sm">
-              <img
-                style="opacity: 0"
-                class="tegeta"
-                src="./assets/partners-img/tegeta.webp"
-                alt="tegeta"
-              />
-              <img class="ufc" src="./assets/partners-img/ufc.webp" alt="UFC" />
-              <img
-                style="opacity: 0"
-                class="tegeta"
-                src="./assets/partners-img/tegeta.webp"
-                alt="tegeta"
-              />
-            </div>
+    <section class="partners">
+      <h2 class="partners-headline">პროექტის პარტნიორები</h2>
+      <div class="slide-container">
+        <div class="slides">
+          <div class="slidediv active">
+            <img src="./assets/usaid.webp" alt="" />
+            <img src="./assets/space.webp" alt="" />
+            <img src="./assets/tnet.webp" alt="" />
           </div>
-        </div>
-        <img
-          class="slides__prev-button"
-          src="./assets/sliderleft.svg"
-          alt="Left Arrow"
-        />
-        <img
-          class="slides__next-button"
-          src="./assets/sliderright.svg"
-          alt="Right Arrow"
-        />
-      </div>
+          <div class="slidediv">
+            <img src="./assets/Tegeta.webp" alt="" />
+            <img src="./assets/spec.png" alt="" />
+            <img src="./assets/tbclising.webp" alt="" />
+          </div>
 
-      <div class="wrapper">
-        <div class="slider__dots">
-          <div class="slider__dot slider__dot--active"></div>
-          <div class="slider__dot"></div>
-          <div class="slider__dot"></div>
+          <div class="slidediv"><img src="./assets/ufc.webp" alt="" /></div>
+        </div>
+
+        <div class="buttons">
+          <span class="next">&#10095;</span>
+          <span class="prev">&#10094;</span>
+        </div>
+
+        <div class="dots-container">
+          <div class="dot active" attr="0"></div>
+          <div class="dot" attr="1"></div>
+          <div class="dot" attr="2"></div>
         </div>
       </div>
     </section>
@@ -153,17 +103,15 @@
         <div class="footer-logo">
           <img
             class="footer-company-logo"
-            src="./assets/logos/companylogo.webp"
+            src="./assets/Asset 1@2x.webp"
             alt=""
           />
         </div>
         <div class="footer-logos">
-          <a href="mailto:itacademy@tbcbank.com.ge"
-            ><button class="footer-btn">მოგვწერეთ</button></a
-          >
+          <button class="footer-btn">მოგვწერეთ</button>
           <div class="social-logos">
-            <img class="fb-logo" src="./assets/logos/fblogo.webp" alt="" />
-            <img class="yt-logo" src="./assets/logos/youtubelogo.webp" alt="" />
+            <img class="fb-logo" src="./assets/fblogo.webp" alt="" />
+            <img class="yt-logo" src="./assets/youtubelogo.webp" alt="" />
           </div>
         </div>
       </div>

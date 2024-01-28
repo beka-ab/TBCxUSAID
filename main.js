@@ -11,6 +11,8 @@ const header = document.querySelector(".main-header");
 
 /////
 
+/////
+
 const faqContainer = document.querySelector(".faq-container");
 faqData.forEach((data) => {
   const faqHTML = ` <div class="faq-content">
@@ -54,11 +56,6 @@ window.addEventListener("scroll", () => {
   currentScrollTop == 0 && header.classList.remove("movingmobileheader");
 });
 
-let slideImages = document.querySelectorAll(".slidediv");
-let next = document.querySelector(".next");
-let prev = document.querySelector(".prev");
-let dots = document.querySelectorAll(".dot");
-
 const coursesList = document.getElementById("coursesList");
 
 coursesData.forEach((course, index) => {
@@ -80,69 +77,157 @@ coursesData.forEach((course, index) => {
   coursesList.appendChild(courseElement);
 });
 
-let counter = 0;
-
-next.addEventListener("click", slideNext);
-function slideNext() {
-  slideImages[counter].style.animation = "next1 0.5s ease-in forwards";
-  counter = counter >= slideImages.length - 1 ? 0 : counter + 1;
-  slideImages[counter].style.animation = "next2 0.5s ease-in forwards";
-  indicators();
-}
-
-prev.addEventListener("click", slidePrev);
-function slidePrev() {
-  slideImages[counter].style.animation = "prev1 0.5s ease-in forwards";
-  counter = counter === 0 ? slideImages.length - 1 : counter - 1;
-  slideImages[counter].style.animation = "prev2 0.5s ease-in forwards";
-  indicators();
-}
-
-let deletInterval;
-function autoSliding() {
-  deletInterval = setInterval(timer, 6000);
-  function timer() {
-    slideNext();
-    indicators();
-  }
-}
-autoSliding();
-
-const container = document.querySelector(".slide-container");
-
-container.addEventListener("mouseover", () => clearInterval(deletInterval));
-container.addEventListener("mouseout", autoSliding);
-
-function indicators() {
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === counter);
-  });
-}
-
-function switchImage(currentImage) {
-  currentImage.classList.add("active");
-  const imageId = currentImage.getAttribute("attr");
-  if (imageId > counter) {
-    slideImages[counter].style.animation = "next1 0.5s ease-in forwards";
-    counter = imageId;
-    slideImages[counter].style.animation = "next2 0.5s ease-in forwards";
-  } else if (imageId == counter) {
-    return;
-  } else {
-    slideImages[counter].style.animation = "prev1 0.5s ease-in forwards";
-    counter = imageId;
-    slideImages[counter].style.animation = "prev2 0.5s ease-in forwards";
-  }
-  indicators();
-}
-dots.forEach((e) => {
-  e.addEventListener("click", (event) => {
-    switchImage(event.currentTarget);
-  });
-});
 faq.forEach((faqItem, i) => {
   faqItem.addEventListener("click", () => {
-    faqAnswer[i].classList.toggle("closed");
+    faqAnswer[i].classList.add("closed");
     faqArrow[i].classList.toggle("rotatearrow");
   });
 });
+///slider
+
+let slide = 0;
+let previousSlide = 0;
+let allowSlideChange = true;
+let intervalID, isDragging, freezeOnHover, startX, startY, offsetX, offsetY;
+const dragInterval = 2200;
+const slides = document.querySelectorAll(".slide");
+const slidesOverlay = document.querySelector(".slides-overlay");
+const dotsContainer = document.querySelector(".slider__dots");
+const dots = document.querySelectorAll(".slider__dot");
+const prevButton = document.querySelector(".slides__prev-button");
+const nextButton = document.querySelector(".slides__next-button");
+
+prevButton.addEventListener("click", handleDecrement);
+nextButton.addEventListener("click", handleIncrement);
+
+dots.forEach((dot, index) =>
+  dot.addEventListener("click", () => {
+    if (!allowSlideChange || slide === index) return;
+    previousSlide = slide;
+    slide = index;
+
+    previousSlide > slide
+      ? animateRight(previousSlide, slide)
+      : animateLeft(previousSlide, slide);
+    showSlide(slide);
+  })
+);
+
+// Drag to slide functions for mobile
+slides.forEach((slide) => slide.addEventListener("touchstart", startDrag));
+document.body.addEventListener("touchmove", drag);
+document.body.addEventListener("touchend", stopDrag);
+//////////////////////////////// END
+
+// Freeze slider on hover
+slidesOverlay.addEventListener("mouseenter", () => (freezeOnHover = true));
+slidesOverlay.addEventListener("mouseleave", () => (freezeOnHover = false));
+dotsContainer.addEventListener("mouseenter", () => (freezeOnHover = true));
+dotsContainer.addEventListener("mouseleave", () => (freezeOnHover = false));
+/////////////////////////////// END
+
+interval();
+
+function startDrag(e) {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+}
+function drag(e) {
+  if (!isDragging || !allowSlideChange) return;
+
+  offsetX = e.touches[0].clientX - startX;
+  offsetY = e.touches[0].clientY - startY;
+
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+
+  if (offsetX > 10) {
+    handleDecrement();
+  }
+
+  if (offsetX < -10) {
+    handleIncrement();
+  }
+}
+function stopDrag() {
+  isDragging = false;
+}
+
+function resetSlideChangeFlag() {
+  allowSlideChange = false;
+  setTimeout(() => {
+    allowSlideChange = true;
+  }, dragInterval);
+}
+
+function interval() {
+  intervalID = setInterval(() => {
+    if (freezeOnHover) return;
+    handleIncrement();
+  }, 4000);
+}
+
+function handleIncrement() {
+  if (!allowSlideChange) return;
+
+  previousSlide = slide;
+
+  slide >= slides.length - 1 ? (slide = 0) : slide++;
+
+  animateLeft(previousSlide, slide);
+
+  showSlide(slide);
+}
+
+function handleDecrement() {
+  if (!allowSlideChange) return;
+
+  previousSlide = slide;
+
+  slide <= 0 ? (slide = slides.length - 1) : slide--;
+
+  animateRight(previousSlide, slide);
+
+  showSlide(slide);
+}
+
+function showSlide(slide) {
+  if (!allowSlideChange) return;
+
+  clearInterval(intervalID);
+
+  setTimeout(
+    () => slides[slide].classList.add("slide--fade-in"),
+    window.innerWidth > 1600 ? 100 : 600
+  );
+  dots[slide].classList.add("slider__dot--active");
+
+  interval();
+  resetSlideChangeFlag();
+}
+
+function animateLeft(previous, current) {
+  clearAnimations();
+
+  slides[previous].classList.add("slide--left");
+  slides[current].classList.add("slide--right");
+}
+
+function animateRight(previous, current) {
+  clearAnimations();
+
+  slides[previous].classList.add("slide--right");
+  slides[current].classList.add("slide--left");
+}
+
+function clearAnimations() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("slide--left");
+    slides[i].classList.remove("slide--right");
+    slides[i].classList.remove("slide--fade-in");
+    dots[i].classList.remove("slider__dot--active");
+  }
+}
+
+///slider

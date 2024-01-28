@@ -1,38 +1,38 @@
 export const coursesData = [
   {
-    imgSrc: "./assets/iosImg.webp",
+    imgSrc: "./assets/courses-img/iosImg.webp",
     title: "iOS Development",
   },
   {
-    imgSrc: "./assets/reactImg.webp",
+    imgSrc: "./assets/courses-img/reactImg.webp",
     title: "React",
   },
   {
-    imgSrc: "./assets/pythonImg.webp",
+    imgSrc: "./assets/courses-img/pythonImg.webp",
     title: "Intro to Python",
   },
   {
-    imgSrc: "./assets/phthonAdvnc.webp",
+    imgSrc: "./assets/courses-img/phthonAdvnc.webp",
     title: "Advanced Python",
   },
   {
-    imgSrc: "./assets/cyberscr.jpg",
+    imgSrc: "./assets/courses-img/cyberscr.jpg",
     title: "Advanced Cybersecurity Course",
   },
   {
-    imgSrc: "./assets/tot.webp",
+    imgSrc: "./assets/courses-img/tot.webp",
     title: "ToT - Training of Trainers",
   },
   {
-    imgSrc: "./assets/blockch.webp",
+    imgSrc: "./assets/courses-img/blockch.webp",
     title: "Blockchain",
   },
   {
-    imgSrc: "./assets/devops.webp",
+    imgSrc: "./assets/courses-img/devops.webp",
     title: "DevOps",
   },
   {
-    imgSrc: "./assets/infSecurity.webp",
+    imgSrc: "./assets/courses-img/infSecurity.webp",
     title: "Information Security Governance",
   },
 ];
