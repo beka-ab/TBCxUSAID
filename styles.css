@@ -701,6 +701,7 @@ li {
     grid-column-start: 4;
     align-self: flex-end;
   }
+  
 }
 /* privacy */
 .privacy {
@@ -709,7 +710,7 @@ li {
   top: 0;
   right: -100%;
   z-index: 53;
-  padding: 80px 60px 40px 90px;
+  padding: 80px 10px 40px 10px;
   width: 50%;
   height: 100vh;
   background-color: var(--bgcolor);
