@@ -91,4 +91,5 @@ git clone "https://github.com/beka-ab/TBCxUSAID.git".
 ** **
 ```
 
-**Clone the Repository:**
+Navigate to the project directory: cd TBCxUSAID
+Open the index.html file in a web browser with code editor
