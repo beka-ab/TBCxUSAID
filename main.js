@@ -9,10 +9,7 @@ const body = document.querySelector("body");
 const overlay = document.querySelector(".overlay");
 const header = document.querySelector(".main-header");
 
-/////
-
-/////
-
+///Dynamic FAQ section
 const faqContainer = document.querySelector(".faq-container");
 faqData.forEach((data) => {
   const faqHTML = ` <div class="faq-content">
@@ -33,7 +30,15 @@ const faq = document.querySelectorAll(".faq-question");
 const faqArrow = document.querySelectorAll(".faq-arrow");
 const faqAnswer = document.querySelectorAll(".faq-answer");
 
-/////
+faq.forEach((faqItem, i) => {
+  faqItem.addEventListener("click", () => {
+    faqAnswer[i].classList.toggle("closed");
+    faqArrow[i].classList.toggle("rotatearrow");
+  });
+});
+/// Dynamic FAQ section
+
+///Burger-menu
 burgerMenu.addEventListener("click", () => {
   burgerMiddleLine.classList.toggle("rotate");
   burgerTopLine.classList.toggle("rotate-top");
@@ -55,7 +60,9 @@ window.addEventListener("scroll", () => {
   lastScrollTop = currentScrollTop;
   currentScrollTop == 0 && header.classList.remove("movingmobileheader");
 });
+///Burger-menu
 
+///Dynamic courses section
 const coursesList = document.getElementById("coursesList");
 
 coursesData.forEach((course, index) => {
@@ -67,7 +74,7 @@ coursesData.forEach((course, index) => {
     <div class="course__text">
       <h5 class="course__headline">${course.title}</h5>
       <p class="registration">რეგისტრაცია დასრულებულია</p>
-      <div>
+      <div class="more-detailes">
         <img src="./assets/arrow.svg" alt="arrow" />
         <span class="course__details">კურსის დეტალები</span>
       </div>
@@ -77,13 +84,9 @@ coursesData.forEach((course, index) => {
   coursesList.appendChild(courseElement);
 });
 
-faq.forEach((faqItem, i) => {
-  faqItem.addEventListener("click", () => {
-    faqAnswer[i].classList.add("closed");
-    faqArrow[i].classList.toggle("rotatearrow");
-  });
-});
-///slider
+///Dynamic courses section
+
+///Slider
 
 let slide = 0;
 let previousSlide = 0;
@@ -113,18 +116,13 @@ dots.forEach((dot, index) =>
   })
 );
 
-// Drag to slide functions for mobile
 slides.forEach((slide) => slide.addEventListener("touchstart", startDrag));
 document.body.addEventListener("touchmove", drag);
 document.body.addEventListener("touchend", stopDrag);
-//////////////////////////////// END
-
-// Freeze slider on hover
 slidesOverlay.addEventListener("mouseenter", () => (freezeOnHover = true));
 slidesOverlay.addEventListener("mouseleave", () => (freezeOnHover = false));
 dotsContainer.addEventListener("mouseenter", () => (freezeOnHover = true));
 dotsContainer.addEventListener("mouseleave", () => (freezeOnHover = false));
-/////////////////////////////// END
 
 interval();
 
@@ -165,7 +163,7 @@ function interval() {
   intervalID = setInterval(() => {
     if (freezeOnHover) return;
     handleIncrement();
-  }, 4000);
+  }, 3000);
 }
 
 function handleIncrement() {
@@ -230,4 +228,37 @@ function clearAnimations() {
   }
 }
 
-///slider
+///Slider
+
+///privacy
+const docuBody = document.body;
+const privacyPanel = document.querySelector(".privacy");
+const openPrivacy = document.querySelector(".footer_privacy_p");
+const closePrivacy = document.querySelector(".privacy_panel_close_icon");
+const closePrivacyBTn = document.querySelector(".privacy_close_btn");
+const privacyOverlay = document.querySelector(".privacy_overlay");
+
+openPrivacy.addEventListener("click", () => {
+  privacyPanel.classList.add("open");
+  privacyOverlay.classList.add("open");
+  docuBody.classList.add("overflow_Hiddne");
+});
+
+closePrivacy.addEventListener("click", () => {
+  docuBody.classList.remove("overflow_Hiddne");
+  privacyPanel.classList.remove("open");
+  privacyOverlay.classList.remove("open");
+});
+
+closePrivacyBTn.addEventListener("click", () => {
+  docuBody.classList.remove("overflow_Hiddne");
+  privacyPanel.classList.remove("open");
+  privacyOverlay.classList.remove("open");
+});
+
+privacyOverlay.addEventListener("click", () => {
+  docuBody.classList.remove("overflow_Hiddne");
+  privacyPanel.classList.remove("open");
+  privacyOverlay.classList.remove("open");
+});
+///privacy

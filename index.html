@@ -118,12 +118,12 @@
         </div>
         <img
           class="slides__prev-button"
-          src="./assets/sliderleft.svg"
+          src="./assets/sliderarrow.svg"
           alt="Left Arrow"
         />
         <img
           class="slides__next-button"
-          src="./assets/sliderright.svg"
+          src="./assets/sliderarrow.svg"
           alt="Right Arrow"
         />
       </div>
@@ -148,30 +148,152 @@
         <button class="faq-btn">ყველა კითხვა</button>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="footer-logo">
-          <img
-            class="footer-company-logo"
-            src="./assets/logos/companylogo.webp"
-            alt=""
-          />
-        </div>
-        <div class="footer-logos">
-          <a href="mailto:itacademy@tbcbank.com.ge"
-            ><button class="footer-btn">მოგვწერეთ</button></a
+    <div class="privacy_overlay"></div>
+    <div class="privacy">
+      <!-- წესები და პირობების დახურვის იქონი -->
+      <svg
+        class="privacy_panel_close_icon"
+        preserveAspectRatio="xMidYMid meet"
+        data-bbox="82.189 55.096 481.811 481.808"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="82.189 55.096 481.811 481.808"
+        role="presentation"
+        aria-hidden="true"
+      >
+        <g>
+          <path
+            d="M531.936 536.904L323.094 328.063 114.253 536.904l-32.064-32.062L291.032 296 82.189 87.157l32.064-32.061 208.842 208.842L531.936 55.096 564 87.157 355.155 296 564 504.842l-32.064 32.062z"
+          ></path>
+        </g>
+      </svg>
+
+      <div class="privacy_txt">
+        <h3>წესები და პირობები</h3>
+        <br />
+        <p>
+          წინამდებარე ვებ-გვერდის გამოყენება რეგულირდება სს „თიბისი ბანკის“
+          (საიდენტიფიკაციო ნომერი: 204854595, მისამართი: თბილისი, კ.
+          მარჯანიშვილის ქ. #7) მიერ დადგენილი წესებითა და პირობებით.
+        </p>
+        <br />
+        <p>
+          ტერმინები „ბანკი“, „ჩვენ“ გულისხმობს სს „თიბისი ბანკს“ (ასევე მისი
+          ჯგუფის წევრ მონათესავე, შვილობილ, აფილირებულ კომპანიებს), ხოლო ტერმინი
+          „თქვენ“, „მომხმარებელი“ გულისხმობს ინდივიდს, კომპანიას, ორგანიზაციულ
+          წარმონაქმნს, რომელიც იყენებს ბანკის წინამდებარე ვებ-გვერდს.
+        </p>
+        <br />
+        <p>
+          გთხოვთ, ყურადღებით გაეცნოთ წინამდებარე წესებსა და პირობებს, რომელიც
+          არეგულირებს თქვენ მიერ ვებ-გვერდის გამოყენების პირობებს. იმ
+          შემთხვევაში, თუ არ ეთანხმებით წინამდებარე წესებსა და პირობებს, გთხოვთ,
+          დატოვოთ ბანკის ვებ-გვერდი.
+        </p>
+        <br />
+        <p>
+          ვებ-გვერდზე სტუმრობით, ან მასზე გამოქვეყნებული ინფორმაციის
+          გამოყენებით, ადასტურებთ და სრულად ეთანხმებით მითითებულ ყველა დანაწესს,
+          რომელიც შესაძლოა ცალმხრივად შეიცვალოს სს „თიბისი ბანკის“ მიერ
+          გარკვეული პერიოდულობით, რაც დაფიქსირდება მოცემულ ვებ-გვერდზე და მასზე
+          თქვენი სტუმრობა ნიშნავს შესაბამის პირობებზე დათანხმებას.
+        </p>
+        <br />
+        <p>
+          ბანკის ვებ-გვერდზე მითითებული ინფორმაცია, უმეტეს შემთხვევაში,
+          განკუთვნილია იმ პირებისთვის, რომლებიც დაინტერესებულნი არიან
+          საქართველოს ფინანსურ ბაზარზე მომსახურების მიღებით. შესაძლოა,
+          ვებ-გვერდზე მითითებული ინფორმაცია არ იყოს ხელმისაწვდომი მსოფლიოს ყველა
+          გეოგრაფიულ არეალში, ბანკის გადაწყვეტილების შესაბამისად.
+        </p>
+        <br />
+        <p>
+          ბანკის ვებ-გვერდზე მითითებული გარკვეული ინფორმაციის გასაანალიზებლად,
+          შესაძლოა დაგჭირდეთ შესაბამისი სფეროს სპეციალისტის კონსულტაცია.
+        </p>
+        <br />
+        <p>
+          ბანკის ვებ-გვერდზე მითითებული კონკრეტული პროდუქტები/მომსახურება
+          რეგულირდება სპეციალური საბანკო მომსახურების ხელშეკრულებით.
+        </p>
+        <br />
+        <h4>ინფორმაციის სიზუსტე</h4>
+        <br />
+        <p>
+          ბანკი არ არის პასუხისმგებელი ვებ-გვერდზე მითითებული ინფორმაციის
+          შინაარსის სიზუსტეზე, მიუხედავად ჩვენი დიდი ძალისხმევისა მოგაწოდოთ
+          უტყუარი ინფორმაცია. აღნიშნული არ წარმოადგენს დადასტურებას და
+          გარანტიას, რომ ვებ-გვერდზე მითითებული ინფორმაცია არის ზუსტი, უტყუარი
+          და შესაფერისი მისი ნებისმიერი გამოყენებისთვის. ბანკის ვებ-გვერდზე
+          არსებული ნებისმიერი ინფორმაცია მითითებულია „როგორც არის“ (“As Is”)
+          საწყისზე. შესაბამისად, ვებ-გვერდზე არსებული ნებისმიერი ინფორმაციის
+          გამოყენება სრულად წარმოადგენს მომხმარებლის პირად რისკს და ბანკი არ
+          არის პასუხისმგებელი ვებ-გვერდზე გამოქვეყნებული ინფორმაციის გამოყენებით
+          დამდგარ ზიანზე. წინამდებარე დათქმა არ ეხება სს თიბისი ბანკის
+          ვებ-გვერდზე
+          <a href="https://www.tbcbank.ge/web/ka">www.tbcbank.ge</a>
+          განთავსებული ხელშეკრულების შემადგენელ ნაწილებს.
+        </p>
+        <br />
+        <h4>საკონტაქტო ინფორმაცია</h4>
+        <br />
+        <p>
+          ნებისმიერი კითხვის არსებობის შემთხვევაში, რაც უკავშირდება წინამდებარე
+          წესებსა და პირობებს და ვებ-გვერდზე მითითებულ ინფორმაციას, გთხოვთ,
+          მოგვმართოთ წერილობითი სახით მისამართზე: თბილისიი, ატენის ქ. 2 ან
+          მოგვწეროთ ელექტრონული ფოსტის საშუალებით:
+          <a class="privacy_mail" href="mailto:itacademy@tbcbank.com.ge"
+            >itacademy@tbcbank.com.ge</a
           >
-          <div class="social-logos">
-            <img class="fb-logo" src="./assets/logos/fblogo.webp" alt="" />
-            <img class="yt-logo" src="./assets/logos/youtubelogo.webp" alt="" />
-          </div>
-        </div>
+        </p>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-agreenmant">წესები და პირობები</p>
-        <p class="footer-copyright">© 2023 ყველა უფლება დაცულია</p>
+
+      <button class="privacy_close_btn">
+        <p>დახურვა</p>
+      </button>
+    </div>
+    <footer class="footer">
+      <div class="footer_inner">
+        <img
+          class="company-logo"
+          src="./assets/logos/footerlogo.webp"
+          alt="footer logo"
+        />
+        <p class="copyrights">
+          <a href="https://fsymbols.com/copyright/" target="_blank">© 2023</a>
+          ყველა უფლება დაცულია
+        </p>
+        <p class="footer_privacy_p">წესები და პირობები</p>
+        <div class="social_icons">
+          <a
+            href="https://www.facebook.com/tbcbank/"
+            target="_blank"
+            aria-label="facebook page"
+          >
+            <img
+              class="fb-logo"
+              src="./assets/logos/fblogo.webp"
+              alt="social icon"
+            />
+          </a>
+
+          <a
+            href="https://www.youtube.com/channel/UCGk9R2LV2ywOL80r8Xc6xtQ"
+            aria-label="youtube channel"
+            target="_blank"
+          >
+            <img
+              class="yt-logo"
+              src="./assets/logos/youtubelogo.webp"
+              alt="social icon"
+            />
+          </a>
+        </div>
+        <a href="mailto:itacademy@tbcbank.com.ge" class="contact_btn"
+          ><p>მოგვწერეთ</p></a
+        >
       </div>
     </footer>
+
     <script type="module" src="./main.js"></script>
     <script type="module" src="./data.js"></script>
   </body>

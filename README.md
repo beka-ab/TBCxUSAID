@@ -1,4 +1,25 @@
-# Project Styling
+# Project Structure
+
+/TBCXUSAID
+│
+├── index.html
+│
+├── style.css
+│
+│
+├── main.js
+│
+│
+├── data.js
+│
+│
+├── assets/
+│ └── (TBCxUSAID/Images)
+│ └── (fonsts)
+│
+└── README.md
+
+## Project Styling
 
 In this project, I've used advanced styling techniques to ensure a polished and interactive user interface. Here's an overview of the key styling components:
 
@@ -52,7 +73,7 @@ The footer is well-organized, featuring logos, social links, and important compa
 
 The project follows a mobile-first design approach, ensuring a seamless and optimized experience for users on various devices. The media query breakpoints are defined as follows:
 
-- **Desktop (min-width: 780px):** Optimized layout for larger screens.
+- **Desktop (min-width: 860px):** Optimized layout for larger screens.
 
 ## Technologies Used
 
@@ -62,8 +83,12 @@ The project follows a mobile-first design approach, ensuring a seamless and opti
 
 ## How to Run the Project
 
-1. **Clone the Repository:**
+**Clone the Repository:**
 
-   ```bash
+```bash
 
-   ```
+git clone "https://github.com/beka-ab/TBCxUSAID.git".
+** **
+```
+
+**Clone the Repository:**
